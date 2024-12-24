@@ -1,0 +1,283 @@
+/* styles.css */
+/* Custom font import */
+@font-face {
+  font-family: "NeuePower-Ultra";
+  src: url("./font/NeuePower-Ultra.ttf");
+}
+
+/* Reset default styles */
+* {
+  scroll-behavior: smooth;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #FFF3F0 #1a1a1a;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFF3F0;
+  border-radius: 4px;
+  border: 2px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4ccc9;
+}
+
+/* Base styles */
+body {
+  font-family: "NeuePower-Ultra", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0c0f16;
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hero section styles */
+.aman-heading {
+  font-family: "NeuePower-Ultra", sans-serif;
+  color: #FFF3F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30vh;
+  height: 100vh;
+  width: 100%;
+}
+
+.first-section {
+  height: 100vh;
+  width: 100%;
+  background-image: url("./112.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Animation styles for text characters */
+.aman-heading span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateY(100px);
+}
+
+/* Sequential animation delays for each character */
+.aman-heading span:nth-child(1) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0s forwards; }
+.aman-heading span:nth-child(2) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0.2s forwards; }
+.aman-heading span:nth-child(3) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0.4s forwards; }
+.aman-heading span:nth-child(4) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0.6s forwards; }
+
+/* Work section styles */
+.new-section {
+  height: 100vh;
+  color: white;
+  background-color: #0c0f16;
+  background-position: 100vh;
+}
+
+.section-title {
+  font-size: 12vh;
+  margin: 60px 40px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Animation styles for section title */
+.section-title span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateY(100px);
+}
+
+/* Modified animation triggers for scroll */
+.section-title span:nth-child(1),
+.section-title span:nth-child(2),
+.section-title span:nth-child(3),
+.section-title span:nth-child(4) {
+  animation: none;
+}
+
+.section-title.animate span:nth-child(1) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0s forwards; }
+.section-title.animate span:nth-child(2) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0.2s forwards; }
+.section-title.animate span:nth-child(3) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0.4s forwards; }
+.section-title.animate span:nth-child(4) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0.6s forwards; }
+
+/* Video section styles */
+.video-section {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.video-section.animate {
+  visibility: visible;
+}
+
+.video-card {
+  width: 40%;
+  max-width: 400px;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.video-card.animate {
+  animation: fadeSlideUp 1s cubic-bezier(0.23, 1, 0.320, 1) forwards;
+}
+
+/* Add staggered delays for each card */
+.video-card:nth-child(1).animate {
+  animation-delay: 0.2s;
+}
+
+.video-card:nth-child(2).animate {
+  animation-delay: 0.4s;
+}
+
+.video-card:nth-child(3).animate {
+  animation-delay: 0.6s;
+}
+
+.video-container {
+  width: 100%;
+  height: 225px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* Video title styles */
+.video-font-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.videofont {
+  color: #FFF3F0;
+}
+
+/* Fade up animation keyframes */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* Animation for video cards */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Styles (up to 767px) */
+@media screen and (max-width: 767px) {
+  .aman-heading {
+    font-size: 15vh;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-size: 8vh;
+    margin: 30px 20px;
+    text-align: center;
+  }
+
+  .video-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .video-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .video-container {
+    height: 200px;
+  }
+
+  .videofont {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablet Styles (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .aman-heading {
+    font-size: 20vh;
+  }
+
+  .section-title {
+    font-size: 10vh;
+  }
+
+  .video-section {
+    flex-wrap: wrap;
+    padding: 0 30px;
+    gap: 30px;
+  }
+
+  .video-card {
+    width: 45%;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1025px) {
+  .video-section {
+    justify-content: space-evenly;
+  }
+
+  .video-card {
+    width: 30%;
+    max-width: 400px;
+  }
+}
+
+.Projects-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 8rem;  
+  font-size: 2rem;
+  color: #ffffff; /* base color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+
+.Projects-link:hover {
+  color: #4a90e2;
+}
