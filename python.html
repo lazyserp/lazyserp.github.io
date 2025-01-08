@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Projects</title>
+    <link rel="stylesheet" href="styleforpython.css" />
+  </head>
+  <body>
+    <div class="heading-text">PROJECTS</div>
+
+    <div class="desc-container">
+      <h3 class="feature-heading">Student Data Management System</h3>
+      <div class="content-flex">
+        <div class="image-container">
+          <img
+            src="./img/DataStorageScript.png"
+            alt="Data Storage Script"
+            class="pythonimage"
+          />
+        </div>
+        <p class="intro">
+          A sophisticated data management solution that combines elegant design
+          with robust functionality. Built with CustomTkinter, this application
+          revolutionizes student record management through its intuitive
+          interface and powerful features.
+        </p>
+      </div>
+
+      <div class="feature-section">
+        <h4>Core Features</h4>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <span class="feature-title">Smart Validation</span>
+            Real-time roll number verification with duplicate prevention
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-title">Intelligent Formatting</span>
+            Automatic name capitalization and branch standardization
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-title">Data Integrity</span>
+            Comprehensive input validation with error prevention
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-title">Efficient Storage</span>
+            Instant CSV persistence with optimized data handling
+          </div>
+        </div>
+      </div>
+
+      <div class="design-notes">
+        <p>
+          Embracing minimalist design principles, the interface features a
+          sophisticated dark theme complemented by smooth, rounded elements. The
+          system prioritizes both aesthetics and functionality, making it an
+          ideal solution for modern educational institutions.
+        </p>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const headingText = document.querySelector('.heading-text');
+        if (headingText) {
+          const text = headingText.textContent;
+          headingText.innerHTML = text
+            .split('')
+            .map(char => char === ' ' ? ' ' : `<span>${char}</span>`)
+            .join('');
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+@font-face {
+  font-family: "desky";
+  src: url("./font/desky.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Nohemi";
+  src: url("./font/NohemiB.ttf");
+}
+
+@font-face {
+  font-family: "NeuePower-Ultra";
+  src: url("./font/NeuePower-Ultra.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Geist-Bold", system-ui, -apple-system, sans-serif;
+  background-image: url("./112.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.heading-text {
+  font-size: clamp(2rem, 8vw, 10vh);
+  font-family: "NeuePower-Ultra";
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.heading-text span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(100px);
+}
+
+/* Sequential animation delays for each character */
+.heading-text span:nth-child(1) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0s forwards; }
+.heading-text span:nth-child(2) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0.2s forwards; }
+.heading-text span:nth-child(3) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0.4s forwards; }
+.heading-text span:nth-child(4) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0.6s forwards; }
+.heading-text span:nth-child(5) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 0.8s forwards; }
+.heading-text span:nth-child(6) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 1.2s forwards; }
+.heading-text span:nth-child(7) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 1.4s forwards; }
+.heading-text span:nth-child(8) { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 1.6s forwards; }
+
+ 
+.content-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.image-container {
+  flex: 0 1 500px;
+  margin: 0;
+}
+
+.database-text {
+  color: whitesmoke;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: "Nohemi";
+  margin-left: 2.5rem;
+}
+
+.pythonimage {
+  width: 100%;
+  max-width: none;
+  transition: transform 0.3s ease;
+  display: block;
+  border-radius: 25px;
+}
+
+.pythonimage:hover {
+  transform: scale(1.1);
+}
+
+.desc-container {
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem;
+  color: #f5f5f5;
+  font-family: "Nohemi", system-ui, -apple-system, sans-serif;
+}
+
+.feature-heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.intro {
+  flex: 1;
+  min-width: 300px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-top: 8rem;
+  font-family: "Nohemi";
+  font-weight: 300;
+}
+
+.feature-section {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.feature-section h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.feature-item {
+  padding: 1rem;
+  border-left: 3px solid #4a90e2;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.feature-title {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--accent-color, #4a90e2);
+  margin-bottom: 0.5rem;
+}
+
+.design-notes {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  line-height: 1.6;
+  font-family: desky;
+  font-size: x-large;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 1rem 0;
+}
+
+.image-side {
+  flex: 0 0 40%;
+  max-width: 500px;
+}
+
+.text-side {
+  flex: 1;
+  min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .image-side {
+    flex: none;
+    width: 100%;
+  }
+}
+
+.feature-heading,
+.content-flex,
+.feature-section,
+.design-notes {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.feature-heading { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 2s forwards; }
+.content-flex { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 2.3s forwards; }
+.feature-section { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 2.6s forwards; }
+.design-notes { animation: fadeUp 1s cubic-bezier(0.23, 1, 0.320, 1) 2.9s forwards; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
