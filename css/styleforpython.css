@@ -1,17 +1,22 @@
 @font-face {
   font-family: "desky";
-  src: url("./font/desky.ttf");
+  src: url("../font/desky.ttf");
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Nohemi";
-  src: url("./font/NohemiB.ttf");
+  src: url("../font/NohemiB.ttf");
+}
+
+@font-face {
+  font-family: "MonSansSBI";
+  src: url("../font/MonSansSBI.ttf");
 }
 
 @font-face {
   font-family: "NeuePower-Ultra";
-  src: url("./font/NeuePower-Ultra.ttf");
+  src: url("../font/NeuePower-Ultra.ttf");
 }
 
 * {
@@ -22,7 +27,7 @@
 
 body {
   font-family: "Geist-Bold", system-ui, -apple-system, sans-serif;
-  background-image: url("./112.jpg");
+  background-image: url("..//img/112.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -101,12 +106,12 @@ body {
 
 .intro {
   flex: 1;
+  font-family: "MonSansSBI";
   min-width: 300px;
   font-size: 1.3rem;
   line-height: 1.6;
   margin-top: 8rem;
-  font-family: "Nohemi";
-  font-weight: 300;
+
 }
 
 .feature-section {
@@ -142,12 +147,34 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.button-dw{
+  display: flex;
+  justify-content: f;
+  padding: 0.8rem 1.5rem;
+  margin: 1rem 0;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: "MonSansSBI";
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  
+}
+
+.button-dw:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+}
+
+
 .design-notes {
   margin-top: 2rem;
   padding: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   line-height: 1.6;
-  font-family: desky;
+  font-family: MonSansSBI;
   font-size: x-large;
 }
 
@@ -158,6 +185,11 @@ body {
   align-items: flex-start;
   margin: 1rem 0;
 }
+
+.text-in-feat{
+  font-family: "MonSansSBI";
+}
+
 
 .image-side {
   flex: 0 0 40%;
