@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Enhanced viewport meta tag for better mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Aman's Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <!-- Main heading with animation -->
+    <div class="first-section">
+      <div class="aman-heading">Aman</div>
+    </div>
+
+    <!-- Work section with video showcase -->
+    <section class="new-section">
+      <h1 class="section-title">WORK</h1>
+      <div class="video-section">
+        <div class="video-card">
+          <div class="video-container">
+            <iframe
+              src="https://player.vimeo.com/video/1040007663?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              title="DigiBoxx Promo.mp4"
+            ></iframe>
+          </div>
+          <div class="video-font-text">
+            <h2 class="videofont">Digiboxx Promo Video</h2>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-container">
+            <iframe
+              src="https://player.vimeo.com/video/1040326993?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              title="Instagram Creative.mp4"
+            ></iframe>
+          </div>
+          <div class="video-font-text">
+            <h2 class="videofont">Instagram Creative</h2>
+          </div>
+        </div>        
+
+        <div class="video-card">
+          <div class="video-container">
+            <iframe
+              src="https://player.vimeo.com/video/1040294595?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              title="2D intro scene"
+            ></iframe>
+          </div>
+          <div class="video-font-text">
+            <h2 class="videofont">2D intro scene</h2>
+          </div>
+        </div>
+      </div>
+      <div >
+        <a href="../html/python.html"  target="_blank" class="Projects-link"> More Projects. </a>
+      </div> 
+    </section>   
+
+    <!-- Vimeo Player API -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+    <!-- Text animation script -->
+    <script>
+      // Function to add animation spans to text
+      function addAnimationSpans(element) {
+        if (element) {
+          element.innerHTML = element.textContent.replace(
+            /\S/g,
+            "<span>$&</span>"
+          );
+        }
+      }
+
+      // Add animation spans to heading and section title
+      addAnimationSpans(document.querySelector(".aman-heading"));
+      addAnimationSpans(document.querySelector(".section-title"));
+
+      // Create the intersection observer for scroll animation
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            // Optional: if you want the animation to only happen once
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2, // Trigger when 20% of the element is visible
+        rootMargin: '-50px' // Adds a margin to when the observation triggers
+      });
+
+      // Start observing the section title
+      const sectionTitle = document.querySelector('.section-title');
+      if (sectionTitle) {
+        observer.observe(sectionTitle);
+      }
+
+      // Create another observer for video cards
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            videoObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '-20px'
+      });
+
+      // Observe all video cards
+      const videoCards = document.querySelectorAll('.video-card');
+      videoCards.forEach(card => {
+        videoObserver.observe(card);
+      });
+
+      // Observe the video section container
+      const videoSection = document.querySelector('.video-section');
+      if (videoSection) {
+        videoObserver.observe(videoSection);
+      }
+    </script>
+  </body>
+</html>
