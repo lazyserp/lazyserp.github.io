@@ -52,7 +52,7 @@ body {
 header {
   display: flex;
   justify-content: space-between; 
-  align-items: center;
+  align-items: left;;
   margin-bottom: 100px; 
   font-size: 16px;
 }
@@ -83,7 +83,7 @@ nav a:hover, nav a.active {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 90px;
   font-weight: 600;
   margin-bottom: 30px;
   color: #fb64b6;
@@ -99,6 +99,8 @@ h1 {
   max-width: 800px; 
   margin-left: auto;
   margin-right: auto;
+  font-size: 20px;
+  text-align: left;
 }
 
 .bio strong {
@@ -125,7 +127,7 @@ h1 {
     color: rgb(255, 255, 255);
     font-family: EskNormal, sans-serif;
     border-radius: 15px;
-    font-size: 10px; 
+    font-size: 15px; 
     padding: 12px 10px;
     text-decoration: none;
     transition: all 0.3s ease;
