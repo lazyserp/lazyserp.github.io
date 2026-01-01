@@ -5,74 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects | Aman</title>
     <link rel="stylesheet" href="./styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    
     <div class="container">
       <header>
         <nav>
           <a href="index.html">Home</a>
           <a href="projects.html" class="active">Projects</a>
-          <a href="#">Contact</a>
+          <a href="contact.html">Contact</a>
         </nav>
       </header>
 
       <main>
-        <h1 class="page-title">Selected Works <span class="text-pink">.</span></h1>
+        <h1 class="page-title">Projects.</h1>
 
         <div class="projects-wrapper">
-          
           <article class="project-card">
             <div class="project-content">
               <div class="project-header">
                 <span class="project-number">01</span>
-                <h2>Train Booking System</h2>
-              </div>
-              
-              <p class="project-description">
-                A high-concurrency backend system mimicking IRCTC. Built to handle complex booking logic, race conditions, and seat allocation algorithms efficiently.
-              </p>
-
-              <div class="tech-stack">
-                <span class="tech-badge">Java</span>
-                <span class="tech-badge">Spring Boot</span>
-                <span class="tech-badge">MySQL</span>
-                <span class="tech-badge">Multithreading</span>
-              </div>
-
-              <div class="project-links">
-                <a href="#" class="btn-link">View on GitHub ↗</a>
-                </div>
-            </div>
-            
-            <div class="project-visual">
-               <div class="code-snippet">
-<pre>
-@Transactional
-public Ticket bookTicket(User user) {
-  // Handling concurrency
-  synchronized(this) {
-    if(seatsAvailable > 0) {
-       return repository.save(ticket);
-    }
-  }
-}
-</pre>
-               </div>
-            </div>
-          </article>
-
-
-          <article class="project-card">
-            <div class="project-content">
-              <div class="project-header">
-                <span class="project-number">02</span>
                 <h2>CuraVie Healthcare</h2>
               </div>
-              
+
               <p class="project-description">
-                An AI-powered platform for migrant workers. Features automated medical report generation and multilingual support to bridge the healthcare gap.
+                An AI-powered platform for migrant workers. Features automated
+                medical report generation and multilingual support to bridge the
+                healthcare gap.
               </p>
 
               <div class="tech-stack">
@@ -83,47 +45,91 @@ public Ticket bookTicket(User user) {
               </div>
 
               <div class="project-links">
-                <a href="#" class="btn-link">View on GitHub ↗</a>
+                <a href="https://github.com/lazyserp/CuraVie"  target="_blank" class="btn-link">View on GitHub ↗</a>
               </div>
             </div>
-            
+
             <div class="project-visual">
-               <div class="code-snippet">
-<pre>
+              <div class="code-snippet">
+                <pre>
 @app.route('/analyze', methods=['POST'])
 def analyze_report():
     img = request.files['report']
     # AI processing pipeline
     data = ai_model.extract(img)
     return jsonify(data)
-</pre>
-               </div>
+</pre
+                >
+              </div>
             </div>
           </article>
 
+          <article class="project-card">
+            <div class="project-content">
+              <div class="project-header">
+                <span class="project-number">02</span>
+                <h2>Ai House Price Predictor</h2>
+              </div>
+
+              <p class="project-description">
+                An Ai based  web app that can predict the Price
+                of a house based on its physical Features such as 
+                floors , year built , no of rooms etc. It uses an AI
+                model trained on dataset taken from keggle.
+              </p>
+
+              <div class="tech-stack">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Machine Learning</span>
+                <span class="tech-badge">Flask</span>
+                <span class="tech-badge">AI model</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/lazyserp/Price-prediction-ML" target="_blank" class="btn-link">View on GitHub ↗</a>
+              </div>
+            </div>
+
+            <div class="project-visual">
+              <div class="code-snippet">
+                <pre>
+@Transactional
+public Ticket bookTicket(User user) {
+  // Handling concurrency
+  synchronized(this) {
+    if(seatsAvailable > 0) {
+       return repository.save(ticket);
+    }
+  }
+}
+</pre
+                >
+              </div>
+            </div>
+          </article>
         </div>
       </main>
     </div>
 
     <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const header = document.querySelector("h1");
-    
-    // 1. Get the text and split it into an array of letters
-    const text = header.innerText;
-    header.innerHTML = ""; // Clear existing text
-    
-    // 2. Wrap each letter in a span with a delay
-    text.split("").forEach((char, index) => {
-      const span = document.createElement("span");
-      span.innerText = char;
-      
-      // 3. Stagger the animation (0.05s delay per letter)
-      span.style.animationDelay = `${index * 0.05}s`; 
-      
-      header.appendChild(span);
-    });
-  });
-</script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector("h1");
+
+        // 1. Get the text and split it into an array of letters
+        const text = header.innerText;
+        header.innerHTML = ""; // Clear existing text
+
+        // 2. Wrap each letter in a span with a delay
+        text.split("").forEach((char, index) => {
+          const span = document.createElement("span");
+          span.innerText = char;
+
+          // 3. Stagger the animation (0.05s delay per letter)
+          span.style.animationDelay = `${index * 0.05}s`;
+
+          header.appendChild(span);
+        });
+      });
+    </script>
   </body>
 </html>
