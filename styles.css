@@ -1,0 +1,316 @@
+:root {
+  --bg-color: #0a0a0a;
+  --text-main: #ededed;
+  --text-dim: #9b9b9b;
+  --accent: #2563eb; 
+  --highlight: #222;
+  --pink:#fb64b6;
+}
+
+@font-face {
+    font-family: 'EskNormal';
+    src: url(./fonts/EsKNormal.otf) format('opentype');
+}
+
+@keyframes blurSlideUp {
+  0% {
+    opacity: 0;
+    filter: blur(12px);          
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);          
+    transform: translateY(0);  
+  }
+}
+
+
+h1 span {
+  display: inline-block;         
+  opacity: 0;                    
+  animation: blurSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  white-space: pre; 
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'EskNormal', 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px; 
+  margin: 0 auto;   
+  padding: 40px 20px;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 100px; 
+  font-size: 16px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--pink);
+  letter-spacing: -1px;
+}
+
+nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  margin-left: 40px;
+  transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--pink);
+}
+
+
+.hero {
+  text-align: center; 
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #fb64b6;
+  line-height: 1.1;
+}
+
+
+.bio {
+  font-size: 22px;
+  color: #ededed;
+  margin-bottom: 50px;
+  line-height: 1.8;
+  max-width: 800px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bio strong {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.text-pink{
+    color:#fb64b6;
+}
+
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-text{
+    display: inline-block; 
+    cursor: pointer;
+    background-color: #0a0a0a;
+    border: #ededed solid 1.5px;
+    color: rgb(255, 255, 255);
+    font-family: EskNormal, sans-serif;
+    border-radius: 15px;
+    font-size: 16px; 
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.button-text:hover{
+    color: #fb64b6;
+    border: #fb64b6 solid 1.5px; 
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 768px) {
+    h1 { font-size: 48px; }
+    .bio { font-size: 18px; }
+    header { flex-direction: column; gap: 20px; }
+    nav a { margin: 0 15px; }
+}
+
+
+
+.page-title {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 80px;
+  margin-top: 0;
+}
+
+.projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 100px; 
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  border-bottom: 1px solid #222;
+  padding-bottom: 80px;
+}
+
+
+.project-card:nth-child(even) {
+  direction: rtl; 
+}
+.project-card:nth-child(even) .project-content {
+  direction: ltr;
+}
+
+.project-number {
+  font-family: 'EskNormal', monospace;
+  color: var(--pink);
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.project-header h2 {
+  font-size: 36px;
+  margin: 0 0 20px 0;
+  color: var(--text-main);
+}
+
+.project-description {
+  font-size: 18px;
+  color: var(--text-dim);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Tech Badges */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.tech-badge {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--pink);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: monospace;
+  border: 1px solid rgba(251, 100, 182, 0.2);
+}
+
+/* Links */
+.project-links {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-link {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--pink);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+
+.btn-link:hover {
+  color: var(--pink);
+}
+
+/* Visual / Code Snippet Area */
+.project-visual {
+  background: #111;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.code-snippet pre {
+  color: #a0a0a0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .project-card, .project-card:nth-child(even) {
+    grid-template-columns: 1fr; /* Stack vertically */
+    direction: ltr;
+    gap: 30px;
+    padding-bottom: 50px;
+  }
+  
+  .page-title {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+/* --- Global Animations --- */
+
+/* 1. The Class we add to elements we want to animate */
+.reveal-text {
+  opacity: 0; /* Invisible start */
+}
+
+/* 2. The Word/Line Wrapper */
+/* We will wrap words in this span via JS to animate them individually */
+.word-span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(15px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin-right: 6px; /* Space between words */
+}
+
+/* 3. The 'Visible' State (Triggered by JS) */
+.word-span.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* 4. General Section Fade In (For cards, buttons, images) */
+.fade-up {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* 5. Stagger Delays (optional helper) */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }

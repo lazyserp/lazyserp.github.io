@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aman's Portfolio.</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    
+    <div class="container">
+      <header>
+        <div class="logo">Aman.</div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="projects.html" class="active">Projects</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <h1>Hi, I'm Aman.</h1>
+
+          <p class="bio"> 
+            I am a <strong><span class="text-pink"> Full Stack Developer </span> </strong> with a disciplined background, leveraging <strong><span class="text-pink"> Java </span></strong> and <strong> <span class="text-pink">Python </span> </strong>
+            to build secure,  <strong> <span class="text-pink"> high-performance web systems. </span></strong>  Driven by complex problem-solving, 
+            I apply rigorous <span class="text-pink"> <strong> DSA </strong> </span> principles to create scalable technology with  <strong><span class="text-pink"> measurable impact.</span></strong>
+          </p>
+
+          <div class="btn-container">
+            <a class="button-text" href="#"> Connect with me </a>
+          </div>
+          
+        </section>
+      </main>
+    </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("h1");
+    
+    // 1. Get the text and split it into an array of letters
+    const text = header.innerText;
+    header.innerHTML = ""; // Clear existing text
+    
+    // 2. Wrap each letter in a span with a delay
+    text.split("").forEach((char, index) => {
+      const span = document.createElement("span");
+      span.innerText = char;
+      
+      // 3. Stagger the animation (0.05s delay per letter)
+      span.style.animationDelay = `${index * 0.05}s`; 
+      
+      header.appendChild(span);
+    });
+  });
+</script>
+</body>
+  </body>
+</html>
