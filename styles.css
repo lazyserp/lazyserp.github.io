@@ -34,7 +34,9 @@ h1 span {
 }
 
 body {
-  background-color: var(--bg-color);
+  background-image: url(./images/bg.jpg);
+  background-size: cover;
+  /* background-color: var(--bg-color); */
   color: var(--text-main);
   font-family: 'EskNormal', 'Inter', sans-serif;
   margin: 0;
